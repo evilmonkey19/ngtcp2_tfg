@@ -80,7 +80,7 @@ client_LDADD = ${LDADD} \
 	$(top_builddir)/crypto/openssl/libngtcp2_crypto_openssl.la \
 	@OPENSSL_LIBS@ \
 	@JEMALLOC_LIBS@
-client_SOURCES = client.cc client.h ${CLIENT_SRCS} \
+client_SOURCES = client.cc  client.h ${CLIENT_SRCS} \
 	tls_client_context_openssl.cc tls_client_context_openssl.h \
 	tls_client_session_openssl.cc tls_client_session_openssl.h \
 	tls_session_base_openssl.cc tls_session_base_openssl.h \
@@ -93,6 +93,27 @@ server_SOURCES = server.cc server.h ${SERVER_SRCS} \
 	tls_server_session_openssl.cc tls_server_session_openssl.h \
 	tls_session_base_openssl.cc tls_session_base_openssl.h \
 	util_openssl.cc
+
+client_enric_CPPFLAGS = ${AM_CPPFLAGS} \
+	@JEMALLOC_CFLAGS@ @OPENSSL_CFLAGS@ -DWITH_EXAMPLE_OPENSSL
+client_enric_LDADD = ${LDADD} \
+	$(top_builddir)/crypto/openssl/libngtcp2_crypto_openssl.la \
+	@OPENSSL_LIBS@ \
+	@JEMALLOC_LIBS@
+client_enric_SOURCES = client_enric.cc  client_enric.h ${CLIENT_SRCS} \
+	tls_client_context_openssl.cc tls_client_context_openssl.h \
+	tls_client_session_openssl.cc tls_client_session_openssl.h \
+	tls_session_base_openssl.cc tls_session_base_openssl.h \
+	util_openssl.cc
+
+server_enric_CPPFLAGS = ${client_enric_CPPFLAGS}
+server_enric_LDADD = ${client_enric_LDADD}
+server_enric_SOURCES = server_enric.cc server_enric.h ${SERVER_SRCS} \
+	tls_server_context_openssl.cc tls_server_context_openssl.h \
+	tls_server_session_openssl.cc tls_server_session_openssl.h \
+	tls_session_base_openssl.cc tls_session_base_openssl.h \
+	util_openssl.cc
+
 
 h09client_CPPFLAGS = ${client_CPPFLAGS}
 h09client_LDADD = ${client_LDADD}

@@ -24,6 +24,7 @@
 if(LIBEV_FOUND AND HAVE_OPENSSL AND LIBNGHTTP3_FOUND)
   set(client_SOURCES
     client.cc
+    client_enric.cc
     client_base.cc
     debug.cc
     util.cc
@@ -89,6 +90,7 @@ endif()
 if(LIBEV_FOUND AND HAVE_GNUTLS AND LIBNGHTTP3_FOUND)
   set(gtlsclient_SOURCES
     client.cc
+    client_enric.cc
     client_base.cc
     debug.cc
     util.cc
@@ -154,6 +156,7 @@ endif()
 if(LIBEV_FOUND AND HAVE_BORINGSSL AND LIBNGHTTP3_FOUND)
   set(bsslclient_SOURCES
     client.cc
+    client_enric.cc
     client_base.cc
     debug.cc
     util.cc
@@ -219,6 +222,7 @@ endif()
 if(LIBEV_FOUND AND HAVE_PICOTLS AND LIBNGHTTP3_FOUND)
   set(ptlsclient_SOURCES
     client.cc
+    client_enric.cc
     client_base.cc
     debug.cc
     util.cc
