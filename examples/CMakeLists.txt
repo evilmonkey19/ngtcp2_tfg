@@ -37,6 +37,7 @@ if(LIBEV_FOUND AND HAVE_OPENSSL AND LIBNGHTTP3_FOUND)
 
   set(server_SOURCES
     server.cc
+    server_enric.cc
     server_base.cc
     debug.cc
     util.cc
@@ -103,6 +104,7 @@ if(LIBEV_FOUND AND HAVE_GNUTLS AND LIBNGHTTP3_FOUND)
 
   set(gtlsserver_SOURCES
     server.cc
+    server_enric.cc
     server_base.cc
     debug.cc
     util.cc
@@ -169,6 +171,7 @@ if(LIBEV_FOUND AND HAVE_BORINGSSL AND LIBNGHTTP3_FOUND)
 
   set(bsslserver_SOURCES
     server.cc
+    server_enric.cc
     server_base.cc
     debug.cc
     util.cc
@@ -235,6 +238,7 @@ if(LIBEV_FOUND AND HAVE_PICOTLS AND LIBNGHTTP3_FOUND)
 
   set(ptlsserver_SOURCES
     server.cc
+    server_enric.cc
     server_base.cc
     debug.cc
     util.cc
