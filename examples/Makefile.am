@@ -42,7 +42,6 @@ LDADD = $(top_builddir)/lib/libngtcp2.la \
 
 SERVER_SRCS = \
 	server_base.cc server_base.h \
-	tls_server_context.h \
 	tls_server_session.h \
 	template.h \
 	debug.cc debug.h \
@@ -64,7 +63,7 @@ CLIENT_SRCS = \
 noinst_PROGRAMS =
 
 if ENABLE_EXAMPLE_OPENSSL
-noinst_PROGRAMS += client server h09client h09server simpleclient
+noinst_PROGRAMS += client server client_enric server_enric h09client h09server simpleclient
 
 simpleclient_CPPFLAGS = ${AM_CPPFLAGS} \
 	@JEMALLOC_CFLAGS@ @OPENSSL_CFLAGS@ -DWITH_EXAMPLE_OPENSSL
