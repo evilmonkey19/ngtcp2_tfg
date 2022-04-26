@@ -42,7 +42,7 @@
 
 #include <http-parser/http_parser.h>
 
-#include "client.h"
+#include "client_enric.h"
 #include "network.h"
 #include "debug.h"
 #include "util.h"
