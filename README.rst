@@ -6,6 +6,8 @@ ngtcp2
 ngtcp2 project is an effort to implement `RFC9000
 <https://datatracker.ietf.org/doc/html/rfc9000>`_ QUIC protocol.
 
+THIS IS A FORK OF NGTCP2. Please go to https://github.com/ngtcp2/ngtcp2 to see the original project with the last updates :).
+
 Documentation
 -------------
 
@@ -80,8 +82,8 @@ Build from git
    $ make -j$(nproc) check
    $ make install
    $ cd ..
-   $ git clone https://github.com/ngtcp2/ngtcp2
-   $ cd ngtcp2
+   $ git clone https://github.com/evilmonkey19/ngtcp2_tfg
+   $ cd ngtcp2_tfg
    $ autoreconf -i
    $ # For Mac users who have installed libev with MacPorts, append
    $ # ',-L/opt/local/lib' to LDFLAGS, and also pass
